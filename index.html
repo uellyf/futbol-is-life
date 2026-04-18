@@ -7,11 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --pitch-green: #22c55e;
-            --energy-orange: #f97316;
-            --warrior-black: #0a0a0a;
-        }
+        :root { --pitch-green: #22c55e; --energy-orange: #f97316; --warrior-black: #0a0a0a; }
         body { background-color: var(--warrior-black); color: white; font-family: 'Inter', sans-serif; }
         .font-oswald { font-family: 'Oswald', sans-serif; }
         .card { background: #171717; border: 1px solid #262626; border-radius: 20px; padding: 20px; margin-bottom: 15px; }
@@ -38,9 +34,7 @@
     </div>
 
     <header class="p-8 text-center">
-        <h1 class="text-5xl font-black font-oswald italic tracking-tighter leading-none">
-            MIDFIELD <span class="text-green-500 underline decoration-orange-500">PRO</span>
-        </h1>
+        <h1 class="text-5xl font-black font-oswald italic tracking-tighter leading-none">MIDFIELD <span class="text-green-500 underline decoration-orange-500">PRO</span></h1>
         <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mt-3 font-bold">Elit Atletik Gelişim Portalı</p>
     </header>
 
@@ -52,18 +46,15 @@
     </div>
 
     <div id="dayTabs" class="flex px-4 mb-8 space-x-3 overflow-x-auto pb-4 no-scrollbar"></div>
-
     <main class="px-4" id="mainContent"></main>
 
     <section class="px-4 mt-12 border-t border-neutral-800 pt-8">
         <h3 class="font-oswald text-2xl uppercase mb-6 text-orange-500 italic">Savaşçı Raporu</h3>
-        
         <div class="card bg-neutral-900 shadow-inner">
             <div class="mb-6">
                 <label class="block text-xs font-black uppercase text-gray-400 mb-3 tracking-widest">Bugünkü Hırs Seviyen</label>
                 <input type="range" min="1" max="10" value="8" class="w-full h-3 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-orange-500">
             </div>
-            
             <label class="block text-xs font-black uppercase text-gray-400 mb-3 tracking-widest">Hoca İçin Gelişim Notu</label>
             <textarea class="w-full bg-neutral-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-green-500 text-white placeholder-gray-600 mb-6" rows="3" placeholder="Sakatlık, ağrı veya performans notu..."></textarea>
             
@@ -77,7 +68,6 @@
                     <input type="number" placeholder="0" class="w-full bg-transparent border-none p-1 text-xl font-black focus:outline-none text-white">
                 </div>
             </div>
-
             <button class="btn-finish w-full mt-6 py-4 text-black font-black rounded-xl text-sm shadow-lg shadow-green-500/20">GÜNÜ NAKAVT ET & KAYDET</button>
         </div>
     </section>
@@ -85,40 +75,40 @@
     <script>
         const programData = {
             1: { title: "ADAPTASYON: SİSTEMİ UYANDIR", days: [
-                { day: 1, title: "Aerobik Temel", food: "Düşük Karbonhidrat: 2 Yumurta + 150g Tavuk + Sebze. Şeker Yasak!", workout: ["40 dk Tempolu Yürüyüş", "15 dk Dinamik Esneme"] },
-                { day: 2, title: "Kuvvet: Beton Temel", food: "Antrenman sonrası 1 muz. Akşam: Izgara Balık.", workout: ["Box Squat: 3x15", "Glute Bridge: 3x20", "Wall Sit: 3x30sn", "Plank: 3x30sn"] },
-                { day: 3, title: "Aktif Toparlanma", food: "Detoks: Yeşil Sebze Suları + Bol Su (3.5L)", workout: ["5.000 Adım Hafif Tempo", "15 dk Foam Roller"] },
-                { day: 4, title: "Üst Vücut Power", food: "K: Yulaflı Yoğurt. Ö/A: Bol Protein.", workout: ["Diz Üstü Şınav: 3x10", "Bird-Dog: 3x12", "Deadbug: 3x15", "20 dk Hafif Bisiklet"] },
-                { day: 5, title: "Çeviklik Ateşi", food: "Akşam: 150g Kırmızı Et + Yeşil Salata.", workout: ["Lateral Shuffle: 5m x 5 set", "Geri Geri Yürüyüş: 3x20m", "Tek Ayak Denge: 3x30sn"] },
-                { day: 6, title: "Yağ Yakım Kampı", food: "1 Ödün Öğünü (Abartmadan!).", workout: ["60 dk Doğa Yürüyüşü (Tempolu)"] },
-                { day: 7, title: "Tartı & Strateji", food: "Hafif ve Temiz Beslenme.", workout: ["Haftalık Ölçülerini Al", "2. Hafta Hazırlığı"] }
+                { day: 1, title: "Aerobik Temel", food: "<b>Kahvaltı:</b> 2 haşlanmış yumurta, 1 dilim beyaz peynir, bol yeşillik, 5 zeytin.<br><b>Öğle:</b> 150g Izgara tavuk + salata.<br><b>Ara:</b> 10 çiğ badem + Yeşil çay.<br><b>Akşam:</b> Zeytinyağlı sebze yemeği + yoğurt.", workout: ["40 dk Tempolu Yürüyüş", "15 dk Dinamik Esneme"] },
+                { day: 2, title: "Kuvvet: Beton Temel", food: "<b>Kahvaltı:</b> 2 yumurta, peynir, yeşillik.<br><b>Ara:</b> 1 muz.<br><b>Akşam:</b> Fırın balık veya Ton balıklı salata.", workout: ["Box Squat: 3x15", "Glute Bridge: 3x20", "Wall Sit: 3x30sn", "Plank: 3x30sn"] },
+                { day: 3, title: "Aktif Toparlanma", food: "<b>Detoks Günü:</b> Bol yeşil smoothie veya sebze suyu.<br><b>Ara:</b> 10 çiğ badem + Yeşil çay.<br><b>Akşam:</b> Zeytinyağlı sebze yemeği + yoğurt.", workout: ["5.000 Adım Hafif Tempo", "15 dk Foam Roller"] },
+                { day: 4, title: "Core & Üst Vücut", food: "<b>Kahvaltı:</b> Yulaflı meyveli yoğurt kasesi.<br><b>Ara:</b> 10 çiğ badem + Yeşil çay.<br><b>Akşam:</b> Zeytinyağlı sebze yemeği + yoğurt.", workout: ["Diz Üstü Şınav: 3x10", "Bird-Dog: 3x12", "Deadbug: 3x15", "20 dk Hafif Bisiklet"] },
+                { day: 5, title: "Çeviklik Ateşi", food: "<b>Kahvaltı:</b> 2 yumurta, peynir, yeşillik.<br><b>Akşam:</b> 150g Kırmızı Et + Yeşil Salata.", workout: ["Lateral Shuffle: 5m x 5 set", "Geri Geri Yürüyüş: 3x20m", "Tek Ayak Denge: 3x30sn"] },
+                { day: 6, title: "Yağ Yakım Kampı", food: "<b>Kahvaltı:</b> 2 yumurta, peynir, yeşillik.<br><b>Ödül:</b> Sadece 1 öğünde porsiyonu aşmadan dilediğin yemek.", workout: ["60 dk Doğa Yürüyüşü (Tempolu)"] },
+                { day: 7, title: "Tartı & Strateji", food: "<b>Detoks Günü:</b> Bol yeşil smoothie veya sebze suyu.", workout: ["Haftalık Ölçülerini Al", "2. Hafta Hazırlığı"] }
             ]},
             2: { title: "YÜKLEME: KAS DİRENCİ", days: [
-                { day: 1, title: "Hız ve Tempo", food: "K: 2 Yumurta + Yulaf. A: Köfte + Sebze.", workout: ["45 dk İnterval Yürüyüş (3/2)", "Alt Vücut Mobilite"] },
-                { day: 2, title: "Patlayıcı Kuvvet", food: "Ara: 1 Avuç Çiğ Kuruyemiş.", workout: ["Bulgarian Split Squat: 3x10", "Sumo Squat: 3x15", "Calf Raise: 3x20", "Plank: 3x45sn"] },
-                { day: 3, title: "Top Teması", food: "Sıvı ağırlıklı beslenme.", workout: ["6.000 Adım", "10 dk Duvarda Tek Pas"] },
-                { day: 4, title: "Üst Vücut V2", food: "Yüksek Protein.", workout: ["Şınav: 3x12", "Mountain Climber: 3x30sn", "25 dk Koşu/Yürüyüş"] },
-                { day: 5, title: "Koordinasyon", food: "Akşam: 1 Porsiyon Bulgur.", workout: ["Z-Run: 10m x 5", "High Knees: 30sn x 4", "Topla Slalom"] },
-                { day: 6, title: "Dayanıklılık", food: "Magnezyum + 4L Su.", workout: ["75 dk Doğa Yürüyüşü", "Soğuk Duş"] },
-                { day: 7, title: "Dinlenme", food: "Vücudu Dinlendir.", workout: ["Haftalık Rapor Hazırla"] }
+                { day: 1, title: "Hız ve Tempo", food: "<b>Kahvaltı:</b> 3 yumurtalı peynirli omlet + yarım avokado.<br><b>Öğle:</b> Izgara köfte + salata.<br><b>Ara:</b> 1 küçük elma + Tarçınlı su.<br><b>Akşam:</b> 150g Izgara Köfte + haşlanmış brokoli.", workout: ["45 dk İnterval Yürüyüş (3/2)", "Alt Vücut Mobilite"] },
+                { day: 2, title: "Patlayıcı Kuvvet", food: "<b>Kahvaltı:</b> 3 yumurtalı peynirli omlet + yarım avokado.<br><b>Ara:</b> Bir avuç çiğ badem.<br><b>Akşam:</b> 150g Izgara Köfte + haşlanmış brokoli.", workout: ["Bulgarian Split Squat: 3x10", "Sumo Squat: 3x15", "Calf Raise: 3x20", "Plank: 3x45sn"] },
+                { day: 3, title: "Top Teması", food: "<b>Sıvı Günü:</b> Sebze suları, bitki çayları.<br><b>Ara:</b> 1 küçük elma + Tarçınlı su.<br><b>Akşam:</b> 150g Izgara Köfte + haşlanmış brokoli.", workout: ["6.000 Adım", "10 dk Duvarda Tek Pas"] },
+                { day: 4, title: "Üst Vücut V2", food: "<b>Kahvaltı:</b> 3 yumurtalı peynirli omlet + yarım avokado.<br><b>Ara:</b> 1 küçük elma + Tarçınlı su.<br><b>Akşam:</b> 150g Izgara Köfte + haşlanmış brokoli.", workout: ["Şınav: 3x12", "Mountain Climber: 3x30sn", "25 dk Koşu/Yürüyüş"] },
+                { day: 5, title: "Koordinasyon", food: "<b>Kahvaltı:</b> 3 yumurtalı peynirli omlet + yarım avokado.<br><b>Akşam:</b> 1 Porsiyon Bulgur pilavı + Köfte.", workout: ["Z-Run: 10m x 5", "High Knees: 30sn x 4", "Topla Slalom"] },
+                { day: 6, title: "Dayanıklılık", food: "<b>Kahvaltı:</b> 3 yumurtalı peynirli omlet + yarım avokado.<br><b>Ara:</b> 1 küçük elma + Tarçınlı su.<br><b>Akşam:</b> 150g Izgara Köfte + haşlanmış brokoli.", workout: ["75 dk Doğa Yürüyüşü", "Soğuk Duş"] },
+                { day: 7, title: "Dinlenme", food: "<b>Vücudu Dinlendir:</b> Hafif beslenme.", workout: ["Haftalık Rapor Hazırla"] }
             ]},
             3: { title: "ŞİDDET: SAHA CANAVARI", days: [
-                { day: "Pzt", title: "Kardiyo", food: "Yüksek protein.", workout: ["50 dk İnterval Koşu (4/1)"] },
-                { day: "Sal", title: "Kuvvet", food: "Yağ Yakıcı Besinler.", workout: ["Goblet Squat: 3x12", "Lunge: 3x10", "Plank: 3x60sn"] },
-                { day: "Çar", title: "Teknik", food: "Anti-inflamatuar.", workout: ["8.000 Adım", "Topla Duvar Pası (20 dk)"] },
-                { day: "Per", title: "Core Power", food: "Hafif Karbonhidrat.", workout: ["Şınav: 3x15", "Russian Twist: 3x20", "Superman: 3x15"] },
-                { day: "Cum", title: "Saha İdmanı", food: "Yüksek Karbonhidrat.", workout: ["Slalom Dripling: 10 Set"] },
-                { day: "Cmt", title: "Uzun Koşu", food: "Bol Yeşil Sebze.", workout: ["90 dk Doğa Yürüyüşü"] },
-                { day: "Paz", title: "Check-in", food: "Haftalık Analiz.", workout: ["Tartı ve Ölçüm"] }
+                { day: "Pzt", title: "Kardiyo", food: "<b>Kahvaltı:</b> 3 y.kaşığı yulaf + 1 bardak süt + 3 ceviz + tarçın.<br><b>Ara:</b> 1 bardak kefir.<br><b>Akşam:</b> Fırın sebzeler + cacık.", workout: ["50 dk İnterval Koşu (4/1)"] },
+                { day: "Sal", title: "Kuvvet", food: "<b>Kahvaltı:</b> Yulaf kasesi.<br><b>Ara:</b> 1 bardak kefir.<br><b>Akşam:</b> Fırın sebzeler + cacık.", workout: ["Goblet Squat: 3x12", "Lunge: 3x10", "Plank: 3x60sn"] },
+                { day: "Çar", title: "Teknik", food: "<b>Kahvaltı:</b> Yulaf kasesi.<br><b>Ara:</b> 1 bardak kefir.<br><b>Akşam:</b> Fırın sebzeler + cacık.", workout: ["8.000 Adım", "Topla Duvar Pası (20 dk)"] },
+                { day: "Per", title: "Core Power", food: "<b>Kahvaltı:</b> Yulaf kasesi.<br><b>Ara:</b> 1 bardak kefir.<br><b>Akşam:</b> Fırın sebzeler + cacık.", workout: ["Şınav: 3x15", "Russian Twist: 3x20", "Superman: 3x15"] },
+                { day: "Cum", title: "Saha İdmanı", food: "<b>Kahvaltı:</b> Yulaf kasesi.<br><b>Akşam:</b> Bulgur pilavı + Sebze.", workout: ["Slalom Dripling: 10 Set"] },
+                { day: "Cmt", title: "Uzun Koşu", food: "<b>Kahvaltı:</b> Yulaf kasesi.<br><b>Ara:</b> 1 bardak kefir.<br><b>Akşam:</b> Fırın sebzeler + cacık.", workout: ["90 dk Doğa Yürüyüşü"] },
+                { day: "Paz", title: "Check-in", food: "<b>Ölçüm Günü.</b>", workout: ["Tartı ve Ölçüm"] }
             ]},
             4: { title: "MAÇ FORMU: FİNAL", days: [
-                { day: "Pzt", title: "HIIT", food: "Yüksek enerji.", workout: ["30sn Depar + 30sn Dinlenme (12 Set)"] },
-                { day: "Sal", title: "Patlayıcı", food: "Kas Onarımı.", workout: ["Jump Squat: 3x10", "Split Squat: 3x12", "Mountain Climber: 3x45sn"] },
-                { day: "Çar", title: "Teknik V2", food: "4 Litre Su.", workout: ["Top Kontrolü & Dönüşler (30 dk)"] },
-                { day: "Per", title: "Denge", food: "Temiz Enerji.", workout: ["Deadbug: 3x20", "Side Plank: 3x15", "Tek Ayak Sektirme"] },
-                { day: "Cum", title: "Mesafe", food: "Tam Buğday Makarna.", workout: ["5 KM Kesintisiz Koşu"] },
-                { day: "Cmt", title: "Rejenerasyon", food: "Hafif Beslenme.", workout: ["60 dk Yüzme veya Bisiklet"] },
-                { day: "Paz", title: "ZAFER", food: "Final Analizi.", workout: ["4 Haftalık Büyük Analiz"] }
+                { day: "Pzt", title: "HIIT", food: "<b>Kahvaltı:</b> Menemen (2 yumurta) + 1 dilim T.B. ekmeği.<br><b>Ara:</b> 1 fincan sade kahve + 2 kare bitter çikolata.<br><b>Akşam:</b> Mercimek çorbası + Tavuk şiş + salata.", workout: ["30sn Depar + 30sn Dinlenme (12 Set)"] },
+                { day: "Sal", title: "Patlayıcı", food: "<b>Kahvaltı:</b> Menemen kasesi.<br><b>Ara:</b> 1 fincan kahve + bitter.<br><b>Akşam:</b> Mercimek çorbası + Tavuk şiş.", workout: ["Jump Squat: 3x10", "Split Squat: 3x12", "Mountain Climber: 3x45sn"] },
+                { day: "Çar", title: "Teknik V2", food: "<b>Kahvaltı:</b> Menemen kasesi.<br><b>Ara:</b> 1 fincan kahve + bitter.<br><b>Akşam:</b> Mercimek çorbası + Tavuk şiş.", workout: ["Top Kontrolü & Dönüşler (30 dk)"] },
+                { day: "Per", title: "Denge", food: "<b>Kahvaltı:</b> Menemen kasesi.<br><b>Ara:</b> 1 fincan kahve + bitter.<br><b>Akşam:</b> Mercimek çorbası + Tavuk şiş.", workout: ["Deadbug: 3x20", "Side Plank: 3x15", "Tek Ayak Sektirme"] },
+                { day: "Cum", title: "Mesafe", food: "<b>Kahvaltı:</b> Menemen kasesi.<br><b>Akşam:</b> Tam Buğday Makarna.", workout: ["5 KM Kesintisiz Koşu"] },
+                { day: "Cmt", title: "Rejenerasyon", food: "<b>Kahvaltı:</b> Menemen kasesi.<br><b>Ara:</b> 1 fincan kahve + bitter.<br><b>Akşam:</b> Mercimek çorbası + Tavuk şiş.", workout: ["60 dk Yüzme veya Bisiklet"] },
+                { day: "Paz", title: "ZAFER", food: "<b>Final Değerlendirmesi.</b>", workout: ["4 Haftalık Büyük Analiz"] }
             ]}
         };
 
@@ -128,7 +118,7 @@
         function changeWeek(w) { currentWeek = w; currentDayIdx = 0; updateWeekButtons(); renderDayTabs(); renderContent(); }
         function updateWeekButtons() { document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-active')); document.getElementById('btn' + currentWeek).classList.add('tab-active'); }
         function renderDayTabs() { const container = document.getElementById('dayTabs'); container.innerHTML = ""; programData[currentWeek].days.forEach((d, idx) => { const btn = document.createElement('button'); btn.className = `flex-shrink-0 px-8 py-3 rounded-xl text-xs font-black uppercase transition-all ${idx === currentDayIdx ? 'day-btn-active' : 'bg-neutral-800 text-gray-500'}`; btn.innerText = (typeof d.day === 'number') ? `GÜN ${d.day}` : d.day; btn.onclick = () => { currentDayIdx = idx; renderDayTabs(); renderContent(); }; container.appendChild(btn); }); }
-        function renderContent() { const dayData = programData[currentWeek].days[currentDayIdx]; const main = document.getElementById('mainContent'); let workoutHTML = dayData.workout.map(ex => `<label class="card flex items-start space-x-4 mb-3 cursor-pointer neon-border-green"><input type="checkbox" class="mt-1"><span class="text-sm font-bold tracking-tight">${ex}</span></label>`).join(''); main.innerHTML = `<div class="mb-8"><h2 class="text-3xl font-oswald italic uppercase text-white leading-none">${dayData.title}</h2><p class="text-green-500 text-xs font-black mt-2 tracking-widest">${programData[currentWeek].title}</p></div><div class="card bg-neutral-900 border-none neon-border-orange"><h3 class="text-[10px] font-black text-orange-500 uppercase mb-3 tracking-[0.2em]">Savaşçı Yakıtı</h3><p class="text-sm text-gray-300 font-medium italic">"${dayData.food}"</p></div><div class="mt-8"><h3 class="text-[10px] font-black text-gray-500 uppercase mb-5 tracking-[0.2em]">Görev Listesi</h3>${workoutHTML}</div>`; }
+        function renderContent() { const dayData = programData[currentWeek].days[currentDayIdx]; const main = document.getElementById('mainContent'); let workoutHTML = dayData.workout.map(ex => `<label class="card flex items-start space-x-4 mb-3 cursor-pointer neon-border-green"><input type="checkbox" class="mt-1"><span class="text-sm font-bold tracking-tight">${ex}</span></label>`).join(''); main.innerHTML = `<div class="mb-8"><h2 class="text-3xl font-oswald italic uppercase text-white leading-none">${dayData.title}</h2><p class="text-green-500 text-xs font-black mt-2 tracking-widest">${programData[currentWeek].title}</p></div><div class="card bg-neutral-900 border-none neon-border-orange"><h3 class="text-[10px] font-black text-orange-500 uppercase mb-3 tracking-[0.2em]">Savaşçı Yakıtı</h3><p class="text-sm text-gray-300 font-medium italic">${dayData.food}</p></div><div class="mt-8"><h3 class="text-[10px] font-black text-gray-500 uppercase mb-5 tracking-[0.2em]">Görev Listesi</h3>${workoutHTML}</div>`; }
         
         changeWeek(1);
         setInterval(() => { const q = ["168 CM BOY, 100% ZEKA!", "ASLA VAZGEÇME!", "95 KG'DAN ŞAMPİYONLUĞA!", "O FORMA SENİ BEKLİYOR!"]; document.getElementById('motivationText').innerText = q[Math.floor(Math.random() * q.length)]; }, 12000);
