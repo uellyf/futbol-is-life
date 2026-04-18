@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midfield Pro | Elif'in Dönüşü</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pitch-green: #22c55e;
+            --energy-orange: #f97316;
+            --warrior-black: #0a0a0a;
+        }
+        body { background-color: var(--warrior-black); color: white; font-family: 'Inter', sans-serif; }
+        .font-oswald { font-family: 'Oswald', sans-serif; }
+        .card { background: #171717; border: 1px solid #262626; border-radius: 20px; padding: 20px; margin-bottom: 15px; }
+        .neon-border-green { border-left: 4px solid var(--pitch-green); }
+        .neon-border-orange { border-left: 4px solid var(--energy-orange); }
+        .tab-btn { transition: all 0.3s; border-radius: 12px; opacity: 0.5; }
+        .tab-active { opacity: 1; background: var(--energy-orange); color: black; font-weight: 900; box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
+        .day-btn-active { background: var(--pitch-green) !important; color: black !important; font-weight: 900; transform: scale(1.1); }
+        .motivation-ticker { animation: ticker 25s linear infinite; white-space: nowrap; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        input[type="checkbox"] { width: 24px; height: 24px; cursor: pointer; border-radius: 8px; accent-color: var(--pitch-green); }
+        input[type="checkbox"]:checked + span { color: var(--pitch-green); font-weight: bold; opacity: 0.8; }
+        .btn-finish { background: linear-gradient(90deg, var(--pitch-green), var(--energy-orange)); transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-finish:active { transform: scale(0.95); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="max-w-2xl mx-auto min-h-screen pb-24">
+
+    <div class="bg-orange-600 overflow-hidden py-2 sticky top-0 z-50 shadow-2xl">
+        <div id="motivationText" class="motivation-ticker text-sm font-black uppercase italic tracking-widest text-black">
+            "ASLA VAZGEÇME!" • "168 CM BOY, DEV BİR YÜREK!" • "SAHA SENİ BEKLİYOR!" • "HER TER DAMLASI BİR ADIM DAHA!" • "95 KG'DAN ŞAMPİYONLUĞA!"
+        </div>
+    </div>
+
+    <header class="p-8 text-center">
+        <h1 class="text-5xl font-black font-oswald italic tracking-tighter leading-none">
+            MIDFIELD <span class="text-green-500 underline decoration-orange-500">PRO</span>
+        </h1>
+        <p class="text-gray-500 text-xs uppercase tracking-[0.3em] mt-3 font-bold">Elit Atletik Gelişim Portalı</p>
+    </header>
+
+    <div class="flex px-4 mb-8 space-x-2">
+        <button onclick="changeWeek(1)" id="btn1" class="tab-btn flex-1 py-3 text-xs tab-active bg-neutral-800">H1</button>
+        <button onclick="changeWeek(2)" id="btn2" class="tab-btn flex-1 py-3 text-xs bg-neutral-800">H2</button>
+        <button onclick="changeWeek(3)" id="btn3" class="tab-btn flex-1 py-3 text-xs bg-neutral-800">H3</button>
+        <button onclick="changeWeek(4)" id="btn4" class="tab-btn flex-1 py-3 text-xs bg-neutral-800">H4</button>
+    </div>
+
+    <div id="dayTabs" class="flex px-4 mb-8 space-x-3 overflow-x-auto pb-4 no-scrollbar"></div>
+
+    <main class="px-4" id="mainContent"></main>
+
+    <section class="px-4 mt-12 border-t border-neutral-800 pt-8">
+        <h3 class="font-oswald text-2xl uppercase mb-6 text-orange-500 italic">Savaşçı Raporu</h3>
+        
+        <div class="card bg-neutral-900 shadow-inner">
+            <div class="mb-6">
+                <label class="block text-xs font-black uppercase text-gray-400 mb-3 tracking-widest">Bugünkü Hırs Seviyen</label>
+                <input type="range" min="1" max="10" value="8" class="w-full h-3 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-orange-500">
+            </div>
+            
+            <label class="block text-xs font-black uppercase text-gray-400 mb-3 tracking-widest">Hoca İçin Gelişim Notu</label>
+            <textarea class="w-full bg-neutral-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-green-500 text-white placeholder-gray-600 mb-6" rows="3" placeholder="Sakatlık, ağrı veya performans notu..."></textarea>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-neutral-800 p-3 rounded-xl border border-neutral-700">
+                    <label class="block text-[10px] text-orange-500 uppercase font-black">Güncel Ağırlık (kg)</label>
+                    <input type="number" step="0.1" value="95.0" class="w-full bg-transparent border-none p-1 text-xl font-black focus:outline-none text-white">
+                </div>
+                <div class="bg-neutral-800 p-3 rounded-xl border border-neutral-700">
+                    <label class="block text-[10px] text-green-500 uppercase font-black">Günlük Kalori (kcal)</label>
+                    <input type="number" placeholder="0" class="w-full bg-transparent border-none p-1 text-xl font-black focus:outline-none text-white">
+                </div>
+            </div>
+
+            <button class="btn-finish w-full mt-6 py-4 text-black font-black rounded-xl text-sm shadow-lg shadow-green-500/20">GÜNÜ NAKAVT ET & KAYDET</button>
+        </div>
+    </section>
+
+    <script>
+        const programData = {
+            1: { title: "ADAPTASYON: SİSTEMİ UYANDIR", days: [
+                { day: 1, title: "Aerobik Temel", food: "Düşük Karbonhidrat: 2 Yumurta + 150g Tavuk + Sebze. Şeker Yasak!", workout: ["40 dk Tempolu Yürüyüş", "15 dk Dinamik Esneme"] },
+                { day: 2, title: "Kuvvet: Beton Temel", food: "Antrenman sonrası 1 muz. Akşam: Izgara Balık.", workout: ["Box Squat: 3x15", "Glute Bridge: 3x20", "Wall Sit: 3x30sn", "Plank: 3x30sn"] },
+                { day: 3, title: "Aktif Toparlanma", food: "Detoks: Yeşil Sebze Suları + Bol Su (3.5L)", workout: ["5.000 Adım Hafif Tempo", "15 dk Foam Roller"] },
+                { day: 4, title: "Üst Vücut Power", food: "K: Yulaflı Yoğurt. Ö/A: Bol Protein.", workout: ["Diz Üstü Şınav: 3x10", "Bird-Dog: 3x12", "Deadbug: 3x15", "20 dk Hafif Bisiklet"] },
+                { day: 5, title: "Çeviklik Ateşi", food: "Akşam: 150g Kırmızı Et + Yeşil Salata.", workout: ["Lateral Shuffle: 5m x 5 set", "Geri Geri Yürüyüş: 3x20m", "Tek Ayak Denge: 3x30sn"] },
+                { day: 6, title: "Yağ Yakım Kampı", food: "1 Ödün Öğünü (Abartmadan!).", workout: ["60 dk Doğa Yürüyüşü (Tempolu)"] },
+                { day: 7, title: "Tartı & Strateji", food: "Hafif ve Temiz Beslenme.", workout: ["Haftalık Ölçülerini Al", "2. Hafta Hazırlığı"] }
+            ]},
+            2: { title: "YÜKLEME: KAS DİRENCİ", days: [
+                { day: 1, title: "Hız ve Tempo", food: "K: 2 Yumurta + Yulaf. A: Köfte + Sebze.", workout: ["45 dk İnterval Yürüyüş (3/2)", "Alt Vücut Mobilite"] },
+                { day: 2, title: "Patlayıcı Kuvvet", food: "Ara: 1 Avuç Çiğ Kuruyemiş.", workout: ["Bulgarian Split Squat: 3x10", "Sumo Squat: 3x15", "Calf Raise: 3x20", "Plank: 3x45sn"] },
+                { day: 3, title: "Top Teması", food: "Sıvı ağırlıklı beslenme.", workout: ["6.000 Adım", "10 dk Duvarda Tek Pas"] },
+                { day: 4, title: "Üst Vücut V2", food: "Yüksek Protein.", workout: ["Şınav: 3x12", "Mountain Climber: 3x30sn", "25 dk Koşu/Yürüyüş"] },
+                { day: 5, title: "Koordinasyon", food: "Akşam: 1 Porsiyon Bulgur.", workout: ["Z-Run: 10m x 5", "High Knees: 30sn x 4", "Topla Slalom"] },
+                { day: 6, title: "Dayanıklılık", food: "Magnezyum + 4L Su.", workout: ["75 dk Doğa Yürüyüşü", "Soğuk Duş"] },
+                { day: 7, title: "Dinlenme", food: "Vücudu Dinlendir.", workout: ["Haftalık Rapor Hazırla"] }
+            ]},
+            3: { title: "ŞİDDET: SAHA CANAVARI", days: [
+                { day: "Pzt", title: "Kardiyo", food: "Yüksek protein.", workout: ["50 dk İnterval Koşu (4/1)"] },
+                { day: "Sal", title: "Kuvvet", food: "Yağ Yakıcı Besinler.", workout: ["Goblet Squat: 3x12", "Lunge: 3x10", "Plank: 3x60sn"] },
+                { day: "Çar", title: "Teknik", food: "Anti-inflamatuar.", workout: ["8.000 Adım", "Topla Duvar Pası (20 dk)"] },
+                { day: "Per", title: "Core Power", food: "Hafif Karbonhidrat.", workout: ["Şınav: 3x15", "Russian Twist: 3x20", "Superman: 3x15"] },
+                { day: "Cum", title: "Saha İdmanı", food: "Yüksek Karbonhidrat.", workout: ["Slalom Dripling: 10 Set"] },
+                { day: "Cmt", title: "Uzun Koşu", food: "Bol Yeşil Sebze.", workout: ["90 dk Doğa Yürüyüşü"] },
+                { day: "Paz", title: "Check-in", food: "Haftalık Analiz.", workout: ["Tartı ve Ölçüm"] }
+            ]},
+            4: { title: "MAÇ FORMU: FİNAL", days: [
+                { day: "Pzt", title: "HIIT", food: "Yüksek enerji.", workout: ["30sn Depar + 30sn Dinlenme (12 Set)"] },
+                { day: "Sal", title: "Patlayıcı", food: "Kas Onarımı.", workout: ["Jump Squat: 3x10", "Split Squat: 3x12", "Mountain Climber: 3x45sn"] },
+                { day: "Çar", title: "Teknik V2", food: "4 Litre Su.", workout: ["Top Kontrolü & Dönüşler (30 dk)"] },
+                { day: "Per", title: "Denge", food: "Temiz Enerji.", workout: ["Deadbug: 3x20", "Side Plank: 3x15", "Tek Ayak Sektirme"] },
+                { day: "Cum", title: "Mesafe", food: "Tam Buğday Makarna.", workout: ["5 KM Kesintisiz Koşu"] },
+                { day: "Cmt", title: "Rejenerasyon", food: "Hafif Beslenme.", workout: ["60 dk Yüzme veya Bisiklet"] },
+                { day: "Paz", title: "ZAFER", food: "Final Analizi.", workout: ["4 Haftalık Büyük Analiz"] }
+            ]}
+        };
+
+        let currentWeek = 1;
+        let currentDayIdx = 0;
+
+        function changeWeek(w) { currentWeek = w; currentDayIdx = 0; updateWeekButtons(); renderDayTabs(); renderContent(); }
+        function updateWeekButtons() { document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-active')); document.getElementById('btn' + currentWeek).classList.add('tab-active'); }
+        function renderDayTabs() { const container = document.getElementById('dayTabs'); container.innerHTML = ""; programData[currentWeek].days.forEach((d, idx) => { const btn = document.createElement('button'); btn.className = `flex-shrink-0 px-8 py-3 rounded-xl text-xs font-black uppercase transition-all ${idx === currentDayIdx ? 'day-btn-active' : 'bg-neutral-800 text-gray-500'}`; btn.innerText = (typeof d.day === 'number') ? `GÜN ${d.day}` : d.day; btn.onclick = () => { currentDayIdx = idx; renderDayTabs(); renderContent(); }; container.appendChild(btn); }); }
+        function renderContent() { const dayData = programData[currentWeek].days[currentDayIdx]; const main = document.getElementById('mainContent'); let workoutHTML = dayData.workout.map(ex => `<label class="card flex items-start space-x-4 mb-3 cursor-pointer neon-border-green"><input type="checkbox" class="mt-1"><span class="text-sm font-bold tracking-tight">${ex}</span></label>`).join(''); main.innerHTML = `<div class="mb-8"><h2 class="text-3xl font-oswald italic uppercase text-white leading-none">${dayData.title}</h2><p class="text-green-500 text-xs font-black mt-2 tracking-widest">${programData[currentWeek].title}</p></div><div class="card bg-neutral-900 border-none neon-border-orange"><h3 class="text-[10px] font-black text-orange-500 uppercase mb-3 tracking-[0.2em]">Savaşçı Yakıtı</h3><p class="text-sm text-gray-300 font-medium italic">"${dayData.food}"</p></div><div class="mt-8"><h3 class="text-[10px] font-black text-gray-500 uppercase mb-5 tracking-[0.2em]">Görev Listesi</h3>${workoutHTML}</div>`; }
+        
+        changeWeek(1);
+        setInterval(() => { const q = ["168 CM BOY, 100% ZEKA!", "ASLA VAZGEÇME!", "95 KG'DAN ŞAMPİYONLUĞA!", "O FORMA SENİ BEKLİYOR!"]; document.getElementById('motivationText').innerText = q[Math.floor(Math.random() * q.length)]; }, 12000);
+    </script>
+</body>
+</html>
